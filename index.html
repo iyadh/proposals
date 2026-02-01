@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tamhees تمحيص — Brand Identity Directions</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --bg-dark: #0a0a0f;
+                --bg-card: #141419;
+                --text-primary: #ffffff;
+                --text-secondary: #8a8a9a;
+                --text-muted: #5a5a6a;
+                --border: #2a2a35;
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                background-color: var(--bg-dark);
+                color: var(--text-primary);
+                min-height: 100vh;
+                line-height: 1.6;
+            }
+
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 60px 40px;
+            }
+
+            /* Header Section */
+            .header {
+                text-align: center;
+                margin-bottom: 80px;
+                padding-bottom: 60px;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .header-label {
+                font-size: 11px;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin-bottom: 24px;
+            }
+
+            .header-title {
+                font-family: "Playfair Display", serif;
+                font-size: 56px;
+                font-weight: 400;
+                margin-bottom: 8px;
+                letter-spacing: -1px;
+            }
+
+            .header-arabic {
+                font-size: 42px;
+                font-weight: 300;
+                color: var(--text-secondary);
+                margin-bottom: 32px;
+            }
+
+            .header-subtitle {
+                font-size: 18px;
+                color: var(--text-secondary);
+                max-width: 600px;
+                margin: 0 auto;
+                font-weight: 300;
+            }
+
+            /* Cards Grid */
+            .directions-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                margin-bottom: 80px;
+            }
+
+            @media (max-width: 1100px) {
+                .directions-grid {
+                    grid-template-columns: 1fr;
+                    max-width: 500px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            /* Direction Card */
+            .direction-card {
+                background: var(--bg-card);
+                border-radius: 16px;
+                overflow: hidden;
+                transition:
+                    transform 0.4s ease,
+                    box-shadow 0.4s ease;
+                cursor: pointer;
+                text-decoration: none;
+                color: inherit;
+                display: block;
+                border: 1px solid var(--border);
+            }
+
+            .direction-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            }
+
+            /* Card Preview Area */
+            .card-preview {
+                height: 280px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Direction 1 - Cool Blue */
+            .card-1 .card-preview {
+                background: linear-gradient(135deg, #060d1d 0%, #1456e1 100%);
+            }
+
+            .card-1 .color-dots span:nth-child(1) {
+                background: #f1f3f8;
+            }
+            .card-1 .color-dots span:nth-child(2) {
+                background: #6b9af0;
+            }
+            .card-1 .color-dots span:nth-child(3) {
+                background: #1456e1;
+            }
+            .card-1 .color-dots span:nth-child(4) {
+                background: #060d1d;
+            }
+
+            /* Direction 2 - Warm Burgundy */
+            .card-2 .card-preview {
+                background: linear-gradient(135deg, #1a1829 0%, #4d1831 100%);
+            }
+
+            .card-2 .color-dots span:nth-child(1) {
+                background: #f4ecd8;
+            }
+            .card-2 .color-dots span:nth-child(2) {
+                background: #724542;
+            }
+            .card-2 .color-dots span:nth-child(3) {
+                background: #4d1831;
+            }
+            .card-2 .color-dots span:nth-child(4) {
+                background: #1a1829;
+            }
+
+            /* Direction 3 - Vibrant Neon */
+            .card-3 .card-preview {
+                background: linear-gradient(135deg, #00004d 0%, #5cd9f6 50%, #c0f05b 100%);
+            }
+
+            .card-3 .color-dots span:nth-child(1) {
+                background: #e3e8dc;
+            }
+            .card-3 .color-dots span:nth-child(2) {
+                background: #5cd9f6;
+            }
+            .card-3 .color-dots span:nth-child(3) {
+                background: #c0f05b;
+            }
+            .card-3 .color-dots span:nth-child(4) {
+                background: #00004d;
+            }
+
+            /* Logo placeholder in preview */
+            .preview-logo {
+                font-family: "Playfair Display", serif;
+                font-size: 32px;
+                color: #ffffff;
+                text-align: center;
+                text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .preview-logo .arabic {
+                font-size: 38px;
+                display: block;
+                margin-bottom: 4px;
+            }
+
+            .preview-logo .latin {
+                font-size: 14px;
+                letter-spacing: 8px;
+                text-transform: uppercase;
+                opacity: 0.9;
+            }
+
+            /* Card Content */
+            .card-content {
+                padding: 28px;
+            }
+
+            .card-number {
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin-bottom: 8px;
+            }
+
+            .card-title {
+                font-family: "Playfair Display", serif;
+                font-size: 24px;
+                font-weight: 400;
+                margin-bottom: 12px;
+            }
+
+            .card-description {
+                font-size: 14px;
+                color: var(--text-secondary);
+                margin-bottom: 20px;
+                line-height: 1.7;
+            }
+
+            /* Color Dots */
+            .color-dots {
+                display: flex;
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+
+            .color-dots span {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                border: 2px solid var(--border);
+            }
+
+            /* Fonts List */
+            .fonts-list {
+                font-size: 12px;
+                color: var(--text-muted);
+            }
+
+            .fonts-list span {
+                display: block;
+                margin-bottom: 2px;
+            }
+
+            /* View Button */
+            .view-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 20px;
+                padding: 12px 20px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                font-size: 13px;
+                color: var(--text-primary);
+                transition: all 0.3s ease;
+            }
+
+            .direction-card:hover .view-btn {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            .view-btn svg {
+                width: 16px;
+                height: 16px;
+                transition: transform 0.3s ease;
+            }
+
+            .direction-card:hover .view-btn svg {
+                transform: translateX(4px);
+            }
+
+            /* Footer */
+            .footer {
+                text-align: center;
+                padding-top: 40px;
+                border-top: 1px solid var(--border);
+            }
+
+            .footer-text {
+                font-size: 13px;
+                color: var(--text-muted);
+            }
+
+            .footer-brand {
+                font-size: 12px;
+                color: var(--text-muted);
+                margin-top: 8px;
+                opacity: 0.6;
+            }
+
+            /* Brief Summary Section */
+            .brief-summary {
+                max-width: 800px;
+                margin: 0 auto 60px;
+                text-align: center;
+            }
+
+            .brief-summary h2 {
+                font-family: "Playfair Display", serif;
+                font-size: 28px;
+                font-weight: 400;
+                margin-bottom: 24px;
+                color: var(--text-primary);
+            }
+
+            .brief-points {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                text-align: left;
+            }
+
+            @media (max-width: 700px) {
+                .brief-points {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .brief-point {
+                padding: 24px;
+                background: var(--bg-card);
+                border-radius: 12px;
+                border: 1px solid var(--border);
+            }
+
+            .brief-point-label {
+                font-size: 11px;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--text-muted);
+                margin-bottom: 8px;
+            }
+
+            .brief-point-value {
+                font-size: 15px;
+                color: var(--text-secondary);
+            }
+
+            /* Section Title */
+            .section-title {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .section-title h2 {
+                font-family: "Playfair Display", serif;
+                font-size: 32px;
+                font-weight: 400;
+                margin-bottom: 12px;
+            }
+
+            .section-title p {
+                color: var(--text-secondary);
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <p class="header-label">Brand Identity Presentation</p>
+                <h1 class="header-title">Tamhees</h1>
+                <p class="header-arabic">تمحيص</p>
+                <p class="header-subtitle">
+                    Three distinct visual directions for an Islamic financial and Sharia consulting firm operating
+                    across Europe, Gulf, and Africa
+                </p>
+            </header>
+
+            <!-- Brief Summary -->
+            <section class="brief-summary">
+                <div class="brief-points">
+                    <div class="brief-point">
+                        <p class="brief-point-label">Industry</p>
+                        <p class="brief-point-value">Islamic Financial & Sharia Consulting</p>
+                    </div>
+                    <div class="brief-point">
+                        <p class="brief-point-label">Markets</p>
+                        <p class="brief-point-value">Europe, Gulf Region, Africa</p>
+                    </div>
+                    <div class="brief-point">
+                        <p class="brief-point-label">Brand Essence</p>
+                        <p class="brief-point-value">Deep Examination, Verification, Precision</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Title -->
+            <div class="section-title">
+                <h2>Art Directions</h2>
+                <p>Select a direction to explore the complete moodboard</p>
+            </div>
+
+            <!-- Directions Grid -->
+            <div class="directions-grid">
+                <!-- Direction 1 -->
+                <a href="Tamhees_ArtDirection1_Final.html" class="direction-card card-1">
+                    <div class="card-preview">
+                        <div class="preview-logo">
+                            <span class="arabic">تمحيص</span>
+                            <span class="latin">Tamhees</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-number">Direction 01</p>
+                        <h3 class="card-title">Geometric Precision</h3>
+                        <p class="card-description">
+                            A structured, authoritative approach with geometric Kufi-inspired letterforms conveying
+                            trust and institutional credibility.
+                        </p>
+                        <div class="color-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="fonts-list">
+                            <span>Headlines: Sofia Sans Condensed Medium</span>
+                            <span>Body: Red Hat Text</span>
+                        </div>
+                        <div class="view-btn">
+                            View Moodboard
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Direction 2 -->
+                <a href="Tamhees_ArtDirection2_Final.html" class="direction-card card-2">
+                    <div class="card-preview">
+                        <div class="preview-logo">
+                            <span class="arabic">تمحيص</span>
+                            <span class="latin">Tamhees</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-number">Direction 02</p>
+                        <h3 class="card-title">Layered Transparency</h3>
+                        <p class="card-description">
+                            Flowing contemporary calligraphy with warm, sophisticated tones reflecting heritage and
+                            modern elegance.
+                        </p>
+                        <div class="color-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="fonts-list">
+                            <span>Headlines: Tenor Sans</span>
+                            <span>Body: Inter</span>
+                        </div>
+                        <div class="view-btn">
+                            View Moodboard
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Direction 3 -->
+                <a href="Tamhees_ArtDirection3_Final.html" class="direction-card card-3">
+                    <div class="card-preview">
+                        <div class="preview-logo">
+                            <span class="arabic">تمحيص</span>
+                            <span class="latin">Tamhees</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-number">Direction 03</p>
+                        <h3 class="card-title">The Calibrated Mark</h3>
+                        <p class="card-description">
+                            Bold, forward-thinking identity with vibrant accent colors projecting innovation and dynamic
+                            confidence.
+                        </p>
+                        <div class="color-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="fonts-list">
+                            <span>Headlines: Zalando Sans Expanded Light</span>
+                            <span>Body: Geist</span>
+                        </div>
+                        <div class="view-btn">
+                            View Moodboard
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p class="footer-text">
+                    Click on any direction to explore the complete brand moodboard with logo applications, typography
+                    systems, and color specifications.
+                </p>
+                <p class="footer-brand">Tamhees تمحيص — Brand Identity 2026</p>
+            </footer>
+        </div>
+    </body>
+    <script>
+        const btns = document.querySelectorAll(".view-btn");
+        btns.forEach((btn, index) => {
+            btn.addEventListener("click", (event) => {
+                event.preventDefault();
+                window.location.assign(`/direction-${index + 1}.html`);
+            });
+        });
+
+        console.log(btns);
+    </script>
+</html>

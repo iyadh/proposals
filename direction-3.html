@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tamhees - Art Direction 3: The Calibrated Mark (Final)</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200;300;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            @font-face {
+                font-family: "Geist";
+                src: url("https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Regular.woff2")
+                    format("woff2");
+                font-weight: 400;
+            }
+            @font-face {
+                font-family: "Geist";
+                src: url("https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/Geist-Light.woff2")
+                    format("woff2");
+                font-weight: 300;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --color-bg: #e3e8dc;
+                --color-cyan: #5cd9f6;
+                --color-lime: #c0f05b;
+                --color-dark: #00004d;
+            }
+
+            body {
+                font-family:
+                    "Geist",
+                    -apple-system,
+                    sans-serif;
+                background: var(--color-bg);
+                color: var(--color-dark);
+                line-height: 1.7;
+            }
+
+            .header {
+                background: var(--color-dark);
+                color: var(--color-bg);
+                padding: 80px 40px;
+                text-align: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .header::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                    radial-gradient(circle at 20% 80%, rgba(92, 217, 246, 0.15) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 20%, rgba(192, 240, 91, 0.1) 0%, transparent 40%);
+            }
+
+            .header-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .logo-container {
+                margin-bottom: 30px;
+            }
+
+            .logo-container svg {
+                max-width: 480px;
+                height: auto;
+            }
+
+            .header h1 {
+                font-family: "Urbanist", sans-serif;
+                font-size: 3.2rem;
+                font-weight: 200;
+                letter-spacing: 20px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .header .subtitle {
+                font-family: "Geist", sans-serif;
+                font-size: 0.95rem;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                opacity: 0.75;
+                font-weight: 300;
+            }
+
+            .direction-badge {
+                display: inline-block;
+                background: linear-gradient(135deg, var(--color-cyan), var(--color-lime));
+                color: var(--color-dark);
+                padding: 12px 32px;
+                font-family: "Urbanist", sans-serif;
+                font-size: 0.8rem;
+                font-weight: 500;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                margin-top: 35px;
+            }
+
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 75px 40px;
+            }
+
+            .section-title {
+                font-family: "Urbanist", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 300;
+                margin-bottom: 45px;
+                color: var(--color-dark);
+                border-bottom: 3px solid var(--color-cyan);
+                padding-bottom: 15px;
+                letter-spacing: 8px;
+                text-transform: uppercase;
+            }
+
+            /* Logo Showcase */
+            .logo-showcase {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                margin-bottom: 90px;
+            }
+
+            .logo-variant {
+                padding: 50px 30px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 200px;
+            }
+
+            .logo-variant svg {
+                max-width: 380px;
+                height: auto;
+            }
+
+            .logo-variant.dark {
+                background: var(--color-dark);
+            }
+            .logo-variant.light {
+                background: var(--color-bg);
+                border: 2px solid #d0d6c8;
+            }
+            .logo-variant.gradient {
+                background: linear-gradient(135deg, var(--color-cyan), var(--color-lime));
+            }
+
+            .logo-variant p {
+                margin-top: 20px;
+                font-family: "Geist", sans-serif;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                opacity: 0.8;
+            }
+
+            .logo-variant.dark p {
+                color: var(--color-bg);
+            }
+            .logo-variant.light p {
+                color: var(--color-dark);
+            }
+            .logo-variant.gradient p {
+                color: var(--color-dark);
+            }
+
+            /* Color Palette */
+            .palette-section {
+                margin-bottom: 100px;
+            }
+
+            .palette-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 30px;
+            }
+
+            .color-card {
+                text-align: center;
+            }
+
+            .color-swatch {
+                height: 80px;
+                margin-bottom: 20px;
+                border-radius: 4px;
+            }
+
+            .color-card h4 {
+                font-family: "Urbanist", sans-serif;
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 6px;
+                font-weight: 500;
+            }
+
+            .color-card p {
+                font-family: "Geist", sans-serif;
+                font-size: 0.75rem;
+                color: #5a5e52;
+                font-weight: 300;
+            }
+
+            .color-card .hsl {
+                font-size: 0.7rem;
+                color: #8a8e82;
+                margin-top: 4px;
+            }
+
+            /* Typography */
+            .typography-section {
+                background: var(--color-dark);
+                color: var(--color-bg);
+                padding: 100px 60px;
+                margin: 0 -40px 100px;
+                position: relative;
+            }
+
+            .typography-section::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background:
+                    radial-gradient(circle at 10% 90%, rgba(92, 217, 246, 0.1) 0%, transparent 30%),
+                    radial-gradient(circle at 90% 10%, rgba(192, 240, 91, 0.08) 0%, transparent 30%);
+            }
+
+            .typography-content {
+                position: relative;
+                z-index: 1;
+            }
+
+            .typography-section h2 {
+                font-family: "Urbanist", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 300;
+                margin-bottom: 60px;
+                text-align: center;
+                letter-spacing: 10px;
+                color: var(--color-cyan);
+                text-transform: uppercase;
+            }
+
+            .type-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 60px;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .type-sample {
+                padding: 50px;
+                border: 1px solid rgba(92, 217, 246, 0.2);
+                position: relative;
+            }
+
+            .type-sample::before {
+                content: "";
+                position: absolute;
+                top: -1px;
+                left: 20%;
+                right: 20%;
+                height: 2px;
+                background: linear-gradient(90deg, var(--color-cyan), var(--color-lime));
+            }
+
+            .type-sample h3 {
+                font-family: "Geist", sans-serif;
+                font-size: 0.7rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: var(--color-lime);
+                margin-bottom: 28px;
+                font-weight: 400;
+            }
+
+            .type-headline {
+                font-family: "Urbanist", sans-serif;
+                font-size: 2.8rem;
+                text-align: center;
+                font-weight: 200;
+                letter-spacing: 15px;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .type-body {
+                font-family: "Geist", sans-serif;
+                font-size: 1.05rem;
+                text-align: center;
+                font-weight: 400;
+                line-height: 1.8;
+            }
+
+            .type-note {
+                font-family: "Geist", sans-serif;
+                font-size: 0.8rem;
+                color: rgba(227, 232, 220, 0.5);
+                text-align: center;
+                margin-top: 20px;
+                font-weight: 300;
+            }
+
+            .font-specs {
+                background: rgba(92, 217, 246, 0.1);
+                padding: 25px;
+                border-left: 3px solid var(--color-cyan);
+                max-width: 1100px;
+                margin: 40px auto 0;
+            }
+
+            .font-specs h4 {
+                font-family: "Urbanist", sans-serif;
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--color-cyan);
+                margin-bottom: 15px;
+                font-weight: 500;
+            }
+
+            .font-specs p {
+                font-family: "Geist", sans-serif;
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+                color: rgba(227, 232, 220, 0.8);
+            }
+
+            .font-specs .note {
+                margin-top: 15px;
+                padding-top: 15px;
+                border-top: 1px solid rgba(92, 217, 246, 0.2);
+                font-size: 0.8rem;
+                color: rgba(227, 232, 220, 0.6);
+            }
+
+            /* Application */
+            .application-section {
+                margin-bottom: 100px;
+            }
+
+            .application-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px;
+            }
+
+            .app-card {
+                background: white;
+                padding: 40px;
+                border-bottom: 3px solid var(--color-dark);
+            }
+
+            .app-card h4 {
+                font-family: "Urbanist", sans-serif;
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 25px;
+                color: var(--color-dark);
+                font-weight: 500;
+            }
+
+            .business-card-preview {
+                background: var(--color-dark);
+                padding: 40px;
+                color: var(--color-bg);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .business-card-preview::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                height: 4px;
+                background: linear-gradient(90deg, var(--color-cyan), var(--color-lime));
+            }
+
+            .bc-logo svg {
+                width: 200px;
+                height: auto;
+            }
+
+            .bc-info {
+                text-align: right;
+                font-family: "Geist", sans-serif;
+                font-size: 0.7rem;
+                line-height: 2;
+                color: rgba(227, 232, 220, 0.8);
+                font-weight: 300;
+            }
+
+            .bc-info .title {
+                font-family: "Urbanist", sans-serif;
+                font-size: 0.8rem;
+                letter-spacing: 3px;
+                color: var(--color-cyan);
+                font-weight: 400;
+                margin-bottom: 5px;
+            }
+
+            .seal-preview {
+                background: var(--color-dark);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 220px;
+                padding: 30px;
+                position: relative;
+            }
+
+            .seal-preview::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: radial-gradient(circle at center, rgba(92, 217, 246, 0.1) 0%, transparent 60%);
+            }
+
+            .seal-preview svg {
+                width: 140px;
+                height: 140px;
+                position: relative;
+                z-index: 1;
+            }
+
+            .seal-preview p {
+                font-family: "Urbanist", sans-serif;
+                font-size: 0.7rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: var(--color-lime);
+                margin-top: 20px;
+                position: relative;
+                z-index: 1;
+            }
+
+            /* Keywords */
+            .keywords-section {
+                background: linear-gradient(135deg, var(--color-cyan), var(--color-lime));
+                padding: 60px;
+                text-align: center;
+                margin: 0 -40px 100px;
+            }
+
+            .keywords-section h2 {
+                font-family: "Urbanist", sans-serif;
+                font-size: 1rem;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                color: var(--color-dark);
+                margin-bottom: 35px;
+                font-weight: 500;
+                opacity: 0.7;
+            }
+
+            .keywords-list {
+                display: flex;
+                justify-content: center;
+                gap: 50px;
+                flex-wrap: wrap;
+            }
+
+            .keyword {
+                font-family: "Geist", sans-serif;
+                font-size: 1rem;
+                color: var(--color-dark);
+                padding: 8px 0;
+                position: relative;
+                font-weight: 400;
+            }
+
+            .keyword::after {
+                content: "·";
+                position: absolute;
+                right: -28px;
+                color: var(--color-dark);
+                opacity: 0.4;
+            }
+
+            .keyword:last-child::after {
+                display: none;
+            }
+
+            footer {
+                text-align: center;
+                padding: 50px;
+                background: var(--color-dark);
+                color: rgba(227, 232, 220, 0.6);
+                font-family: "Geist", sans-serif;
+                font-size: 0.85rem;
+                font-weight: 300;
+            }
+
+            footer span {
+                background: linear-gradient(90deg, var(--color-cyan), var(--color-lime));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-container">
+                    <svg width="773" height="349" viewBox="0 0 773 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M161.297 246.084C211.932 246.084 269.917 234.249 303.401 207.723C306.26 203.234 308.71 195.48 310.752 186.502C316.06 188.95 320.96 189.766 361.387 189.766C454.081 189.766 465.515 187.726 471.232 183.645L482.666 165.28H484.707C490.424 179.564 506.35 189.766 522.275 189.766C543.509 189.766 565.968 184.869 590.469 171.402C599.861 166.097 607.211 165.28 623.545 165.28C628.037 165.28 634.57 166.505 641.104 167.729C640.696 169.769 640.696 171.81 640.696 173.034C640.696 187.318 655.805 190.174 675.405 190.174C687.656 190.174 693.781 189.766 701.948 185.685L707.256 175.483C729.307 183.645 749.316 195.888 752.174 207.315H759.116C766.875 182.421 773 167.321 773 150.589C773 130.184 743.599 121.614 721.548 113.86C718.69 112.636 716.24 108.555 716.24 104.474C716.24 101.617 724.815 92.6386 746.866 92.6386C757.074 92.6386 759.525 96.7196 759.525 101.209H766.058C770.142 90.19 773 77.1308 773 71.8255C773 57.134 771.367 51.0125 757.483 51.0125C737.882 51.0125 695.006 72.2336 695.006 105.29C695.006 115.084 697.048 121.206 699.089 126.919C691.331 130.184 672.138 131.816 668.463 126.511L670.913 112.636L668.872 107.33C648.863 107.738 620.687 96.3115 599.861 85.7009C583.119 77.1308 566.785 69.785 556.985 69.785C539.426 69.785 529.625 96.7196 522.275 129.776H521.867C507.575 129.776 496.958 122.838 496.141 115.084L490.833 66.5202H487.566L465.515 93.8629L471.64 124.47C469.599 128.551 461.432 129.776 451.223 129.776H437.339C439.381 123.246 441.014 116.308 441.014 111.411C441.014 97.9439 412.838 74.6822 400.18 74.6822C386.296 74.6822 345.87 106.106 320.96 129.368C316.469 129.368 313.61 128.551 309.527 126.103C307.077 116.308 304.218 107.738 300.951 101.617H298.093L283.801 137.121C287.476 144.467 290.334 152.221 291.968 157.935C268.284 172.626 223.774 184.869 167.422 184.869C134.754 184.869 109.437 184.053 82.486 178.748C51.0433 172.626 27.3592 165.688 8.98362 146.508L0 152.221C7.35024 180.788 22.4591 213.028 54.3101 230.168C79.2192 243.227 115.97 246.084 161.297 246.084Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M546.045 348.672C543.613 348.672 541.549 348.448 539.853 348C538.157 347.552 536.781 346.96 535.725 346.224C534.669 345.456 533.885 344.608 533.373 343.68C532.861 342.752 532.557 341.808 532.461 340.848H536.493C536.685 341.552 537.085 342.272 537.693 343.008C538.301 343.744 539.261 344.368 540.573 344.88C541.917 345.392 543.741 345.648 546.045 345.648C548.221 345.648 549.965 345.456 551.277 345.072C552.589 344.656 553.533 344.128 554.109 343.488C554.717 342.816 555.021 342.08 555.021 341.28C555.021 340.48 554.653 339.728 553.917 339.024C553.213 338.32 551.885 337.84 549.933 337.584L541.485 336.336C538.573 335.952 536.445 335.248 535.101 334.224C533.757 333.168 533.085 331.728 533.085 329.904C533.085 328.88 533.341 327.936 533.853 327.072C534.365 326.176 535.133 325.408 536.157 324.768C537.213 324.096 538.525 323.584 540.093 323.232C541.661 322.848 543.501 322.656 545.613 322.656C548.333 322.656 550.589 322.96 552.381 323.568C554.173 324.176 555.549 325.024 556.509 326.112C557.501 327.168 558.109 328.416 558.333 329.856H554.253C554.061 329.12 553.661 328.448 553.053 327.84C552.477 327.2 551.581 326.688 550.365 326.304C549.149 325.888 547.549 325.68 545.565 325.68C543.677 325.68 542.109 325.856 540.861 326.208C539.613 326.56 538.669 327.04 538.029 327.648C537.421 328.224 537.117 328.912 537.117 329.712C537.117 330.672 537.517 331.424 538.317 331.968C539.149 332.512 540.365 332.896 541.965 333.12L550.077 334.272C551.901 334.528 553.485 334.928 554.829 335.472C556.205 335.984 557.261 336.688 557.997 337.584C558.733 338.48 559.101 339.648 559.101 341.088C559.101 342.336 558.797 343.44 558.189 344.4C557.581 345.328 556.701 346.112 555.549 346.752C554.429 347.392 553.053 347.872 551.421 348.192C549.821 348.512 548.029 348.672 546.045 348.672Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M497.264 348.672C494.224 348.672 491.552 348.144 489.248 347.088C486.976 346 485.2 344.48 483.92 342.528C482.64 340.576 482 338.272 482 335.616C482 334.048 482.224 332.592 482.672 331.248C483.152 329.904 483.84 328.704 484.736 327.648C485.632 326.592 486.704 325.696 487.952 324.96C489.232 324.192 490.656 323.616 492.224 323.232C493.792 322.848 495.52 322.656 497.408 322.656C499.52 322.656 501.488 322.928 503.312 323.472C505.136 324.016 506.72 324.864 508.064 326.016C509.408 327.136 510.432 328.592 511.136 330.384C511.84 332.144 512.144 334.24 512.048 336.672H484.352V333.744H507.968C507.84 332.432 507.504 331.296 506.96 330.336C506.416 329.344 505.68 328.512 504.752 327.84C503.824 327.136 502.736 326.608 501.488 326.256C500.272 325.904 498.912 325.728 497.408 325.728C495.936 325.728 494.592 325.888 493.376 326.208C492.16 326.528 491.088 326.976 490.16 327.552C489.264 328.128 488.512 328.832 487.904 329.664C487.296 330.464 486.832 331.376 486.512 332.4C486.192 333.392 486.032 334.464 486.032 335.616C486.032 337.504 486.464 339.216 487.328 340.752C488.192 342.256 489.472 343.44 491.168 344.304C492.864 345.168 494.944 345.6 497.408 345.6C500.032 345.6 502.144 345.216 503.744 344.448C505.344 343.648 506.528 342.56 507.296 341.184H511.472C510.928 342.624 510.064 343.904 508.88 345.024C507.696 346.144 506.144 347.04 504.224 347.712C502.304 348.352 499.984 348.672 497.264 348.672Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M446.811 348.672C443.771 348.672 441.099 348.144 438.795 347.088C436.523 346 434.747 344.48 433.467 342.528C432.187 340.576 431.547 338.272 431.547 335.616C431.547 334.048 431.771 332.592 432.219 331.248C432.699 329.904 433.387 328.704 434.283 327.648C435.179 326.592 436.251 325.696 437.499 324.96C438.779 324.192 440.203 323.616 441.771 323.232C443.339 322.848 445.067 322.656 446.955 322.656C449.067 322.656 451.035 322.928 452.859 323.472C454.683 324.016 456.267 324.864 457.611 326.016C458.955 327.136 459.979 328.592 460.683 330.384C461.387 332.144 461.691 334.24 461.595 336.672H433.899V333.744H457.515C457.387 332.432 457.051 331.296 456.507 330.336C455.963 329.344 455.227 328.512 454.299 327.84C453.371 327.136 452.283 326.608 451.035 326.256C449.819 325.904 448.459 325.728 446.955 325.728C445.483 325.728 444.139 325.888 442.923 326.208C441.707 326.528 440.635 326.976 439.707 327.552C438.811 328.128 438.059 328.832 437.451 329.664C436.843 330.464 436.379 331.376 436.059 332.4C435.739 333.392 435.579 334.464 435.579 335.616C435.579 337.504 436.011 339.216 436.875 340.752C437.739 342.256 439.019 343.44 440.715 344.304C442.411 345.168 444.491 345.6 446.955 345.6C449.579 345.6 451.691 345.216 453.291 344.448C454.891 343.648 456.075 342.56 456.843 341.184H461.019C460.475 342.624 459.611 343.904 458.427 345.024C457.243 346.144 455.691 347.04 453.771 347.712C451.851 348.352 449.531 348.672 446.811 348.672Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M382.852 348.001V313.729H386.74V330.817L386.404 330.481C387.044 328.561 387.94 327.041 389.092 325.921C390.244 324.769 391.588 323.937 393.124 323.425C394.692 322.913 396.388 322.657 398.212 322.657C400.708 322.657 402.852 323.105 404.644 324.001C406.436 324.865 407.812 326.161 408.772 327.889C409.764 329.585 410.26 331.713 410.26 334.273V348.001H406.42V335.041C406.42 332.161 405.668 329.889 404.164 328.225C402.692 326.529 400.372 325.681 397.204 325.681C395.092 325.681 393.252 326.113 391.684 326.977C390.116 327.809 388.9 328.961 388.036 330.433C387.172 331.873 386.74 333.489 386.74 335.281V348.001H382.852Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M318.703 348V323.328H322.591V329.616L322.159 329.328C322.799 327.664 323.599 326.352 324.559 325.392C325.519 324.4 326.623 323.696 327.871 323.28C329.119 322.864 330.447 322.656 331.855 322.656C333.423 322.656 334.847 322.896 336.127 323.376C337.439 323.856 338.543 324.608 339.439 325.632C340.335 326.656 340.959 327.984 341.311 329.616L340.687 329.664C341.263 327.872 342.047 326.48 343.039 325.488C344.063 324.464 345.231 323.744 346.543 323.328C347.855 322.88 349.215 322.656 350.623 322.656C352.511 322.656 354.191 323.056 355.663 323.856C357.135 324.624 358.287 325.76 359.119 327.264C359.951 328.768 360.367 330.624 360.367 332.832V348H356.527V333.264C356.527 331.504 356.239 330.064 355.663 328.944C355.087 327.824 354.287 327.008 353.263 326.496C352.271 325.952 351.087 325.68 349.711 325.68C348.143 325.68 346.735 326.032 345.487 326.736C344.271 327.408 343.295 328.368 342.559 329.616C341.855 330.864 341.503 332.336 341.503 334.032V348H337.615V333.264C337.615 330.64 337.007 328.72 335.791 327.504C334.575 326.288 332.943 325.68 330.895 325.68C329.327 325.68 327.919 326.032 326.671 326.736C325.423 327.408 324.431 328.368 323.695 329.616C322.959 330.864 322.591 332.336 322.591 334.032V348H318.703Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M279.199 348.624C275.935 348.624 273.423 347.984 271.663 346.704C269.903 345.424 269.023 343.632 269.023 341.328C269.023 340.016 269.343 338.88 269.983 337.92C270.655 336.928 271.615 336.128 272.863 335.52C274.143 334.912 275.679 334.512 277.471 334.32L289.711 332.928C290.639 332.8 291.327 332.56 291.775 332.208C292.223 331.824 292.447 331.28 292.447 330.576V330.528C292.447 329.6 292.127 328.768 291.487 328.032C290.879 327.296 289.919 326.72 288.607 326.304C287.295 325.856 285.631 325.632 283.615 325.632C280.735 325.632 278.543 326.048 277.039 326.88C275.535 327.712 274.639 328.784 274.351 330.096H270.415C270.575 328.624 271.183 327.328 272.239 326.208C273.295 325.088 274.767 324.224 276.655 323.616C278.575 322.976 280.911 322.656 283.663 322.656C286.607 322.656 289.007 323.008 290.863 323.712C292.751 324.384 294.127 325.344 294.991 326.592C295.887 327.808 296.335 329.264 296.335 330.96V348H292.543V339.84L292.879 340.32C292.175 342.112 291.167 343.632 289.855 344.88C288.543 346.096 286.991 347.024 285.199 347.664C283.407 348.304 281.407 348.624 279.199 348.624ZM280.303 345.504C281.967 345.504 283.519 345.264 284.959 344.784C286.431 344.272 287.727 343.6 288.847 342.768C289.967 341.904 290.847 340.912 291.487 339.792C292.127 338.672 292.447 337.488 292.447 336.24V333.696L293.167 334.704C292.623 334.96 291.999 335.168 291.295 335.328C290.623 335.488 289.615 335.664 288.271 335.856L277.663 337.2C276.159 337.424 275.023 337.856 274.255 338.496C273.487 339.104 273.103 339.952 273.103 341.04C273.103 342.544 273.711 343.664 274.927 344.4C276.175 345.136 277.967 345.504 280.303 345.504Z"
+                            fill="#5CD9F6"
+                        />
+                        <path
+                            d="M229.693 348.001V317.041H214.141V313.729H249.277V317.041H233.773V348.001H229.693Z"
+                            fill="#5CD9F6"
+                        />
+                    </svg>
+                </div>
+                <h1>TAMHEES</h1>
+                <p class="subtitle">Logo Design Moodboard</p>
+                <div class="direction-badge">Art Direction 3 — The Calibrated Mark</div>
+            </div>
+        </header>
+
+        <div class="container">
+            <h2 class="section-title">Logo Color Variants</h2>
+            <div class="logo-showcase">
+                <div class="logo-variant dark">
+                    <svg width="400" height="180" viewBox="0 0 773 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M161.297 246.084C211.932 246.084 269.917 234.249 303.401 207.723C306.26 203.234 308.71 195.48 310.752 186.502C316.06 188.95 320.96 189.766 361.387 189.766C454.081 189.766 465.515 187.726 471.232 183.645L482.666 165.28H484.707C490.424 179.564 506.35 189.766 522.275 189.766C543.509 189.766 565.968 184.869 590.469 171.402C599.861 166.097 607.211 165.28 623.545 165.28C628.037 165.28 634.57 166.505 641.104 167.729C640.696 169.769 640.696 171.81 640.696 173.034C640.696 187.318 655.805 190.174 675.405 190.174C687.656 190.174 693.781 189.766 701.948 185.685L707.256 175.483C729.307 183.645 749.316 195.888 752.174 207.315H759.116C766.875 182.421 773 167.321 773 150.589C773 130.184 743.599 121.614 721.548 113.86C718.69 112.636 716.24 108.555 716.24 104.474C716.24 101.617 724.815 92.6386 746.866 92.6386C757.074 92.6386 759.525 96.7196 759.525 101.209H766.058C770.142 90.19 773 77.1308 773 71.8255C773 57.134 771.367 51.0125 757.483 51.0125C737.882 51.0125 695.006 72.2336 695.006 105.29C695.006 115.084 697.048 121.206 699.089 126.919C691.331 130.184 672.138 131.816 668.463 126.511L670.913 112.636L668.872 107.33C648.863 107.738 620.687 96.3115 599.861 85.7009C583.119 77.1308 566.785 69.785 556.985 69.785C539.426 69.785 529.625 96.7196 522.275 129.776H521.867C507.575 129.776 496.958 122.838 496.141 115.084L490.833 66.5202H487.566L465.515 93.8629L471.64 124.47C469.599 128.551 461.432 129.776 451.223 129.776H437.339C439.381 123.246 441.014 116.308 441.014 111.411C441.014 97.9439 412.838 74.6822 400.18 74.6822C386.296 74.6822 345.87 106.106 320.96 129.368C316.469 129.368 313.61 128.551 309.527 126.103C307.077 116.308 304.218 107.738 300.951 101.617H298.093L283.801 137.121C287.476 144.467 290.334 152.221 291.968 157.935C268.284 172.626 223.774 184.869 167.422 184.869C134.754 184.869 109.437 184.053 82.486 178.748C51.0433 172.626 27.3592 165.688 8.98362 146.508L0 152.221C7.35024 180.788 22.4591 213.028 54.3101 230.168C79.2192 243.227 115.97 246.084 161.297 246.084Z"
+                            fill="#5CD9F6"
+                        />
+                    </svg>
+                    <p>Cyan on Dark</p>
+                </div>
+                <div class="logo-variant light">
+                    <svg width="400" height="180" viewBox="0 0 773 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M161.297 246.084C211.932 246.084 269.917 234.249 303.401 207.723C306.26 203.234 308.71 195.48 310.752 186.502C316.06 188.95 320.96 189.766 361.387 189.766C454.081 189.766 465.515 187.726 471.232 183.645L482.666 165.28H484.707C490.424 179.564 506.35 189.766 522.275 189.766C543.509 189.766 565.968 184.869 590.469 171.402C599.861 166.097 607.211 165.28 623.545 165.28C628.037 165.28 634.57 166.505 641.104 167.729C640.696 169.769 640.696 171.81 640.696 173.034C640.696 187.318 655.805 190.174 675.405 190.174C687.656 190.174 693.781 189.766 701.948 185.685L707.256 175.483C729.307 183.645 749.316 195.888 752.174 207.315H759.116C766.875 182.421 773 167.321 773 150.589C773 130.184 743.599 121.614 721.548 113.86C718.69 112.636 716.24 108.555 716.24 104.474C716.24 101.617 724.815 92.6386 746.866 92.6386C757.074 92.6386 759.525 96.7196 759.525 101.209H766.058C770.142 90.19 773 77.1308 773 71.8255C773 57.134 771.367 51.0125 757.483 51.0125C737.882 51.0125 695.006 72.2336 695.006 105.29C695.006 115.084 697.048 121.206 699.089 126.919C691.331 130.184 672.138 131.816 668.463 126.511L670.913 112.636L668.872 107.33C648.863 107.738 620.687 96.3115 599.861 85.7009C583.119 77.1308 566.785 69.785 556.985 69.785C539.426 69.785 529.625 96.7196 522.275 129.776H521.867C507.575 129.776 496.958 122.838 496.141 115.084L490.833 66.5202H487.566L465.515 93.8629L471.64 124.47C469.599 128.551 461.432 129.776 451.223 129.776H437.339C439.381 123.246 441.014 116.308 441.014 111.411C441.014 97.9439 412.838 74.6822 400.18 74.6822C386.296 74.6822 345.87 106.106 320.96 129.368C316.469 129.368 313.61 128.551 309.527 126.103C307.077 116.308 304.218 107.738 300.951 101.617H298.093L283.801 137.121C287.476 144.467 290.334 152.221 291.968 157.935C268.284 172.626 223.774 184.869 167.422 184.869C134.754 184.869 109.437 184.053 82.486 178.748C51.0433 172.626 27.3592 165.688 8.98362 146.508L0 152.221C7.35024 180.788 22.4591 213.028 54.3101 230.168C79.2192 243.227 115.97 246.084 161.297 246.084Z"
+                            fill="#00004D"
+                        />
+                    </svg>
+                    <p>Indigo on Light</p>
+                </div>
+                <div class="logo-variant gradient">
+                    <svg width="400" height="180" viewBox="0 0 773 349" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M161.297 246.084C211.932 246.084 269.917 234.249 303.401 207.723C306.26 203.234 308.71 195.48 310.752 186.502C316.06 188.95 320.96 189.766 361.387 189.766C454.081 189.766 465.515 187.726 471.232 183.645L482.666 165.28H484.707C490.424 179.564 506.35 189.766 522.275 189.766C543.509 189.766 565.968 184.869 590.469 171.402C599.861 166.097 607.211 165.28 623.545 165.28C628.037 165.28 634.57 166.505 641.104 167.729C640.696 169.769 640.696 171.81 640.696 173.034C640.696 187.318 655.805 190.174 675.405 190.174C687.656 190.174 693.781 189.766 701.948 185.685L707.256 175.483C729.307 183.645 749.316 195.888 752.174 207.315H759.116C766.875 182.421 773 167.321 773 150.589C773 130.184 743.599 121.614 721.548 113.86C718.69 112.636 716.24 108.555 716.24 104.474C716.24 101.617 724.815 92.6386 746.866 92.6386C757.074 92.6386 759.525 96.7196 759.525 101.209H766.058C770.142 90.19 773 77.1308 773 71.8255C773 57.134 771.367 51.0125 757.483 51.0125C737.882 51.0125 695.006 72.2336 695.006 105.29C695.006 115.084 697.048 121.206 699.089 126.919C691.331 130.184 672.138 131.816 668.463 126.511L670.913 112.636L668.872 107.33C648.863 107.738 620.687 96.3115 599.861 85.7009C583.119 77.1308 566.785 69.785 556.985 69.785C539.426 69.785 529.625 96.7196 522.275 129.776H521.867C507.575 129.776 496.958 122.838 496.141 115.084L490.833 66.5202H487.566L465.515 93.8629L471.64 124.47C469.599 128.551 461.432 129.776 451.223 129.776H437.339C439.381 123.246 441.014 116.308 441.014 111.411C441.014 97.9439 412.838 74.6822 400.18 74.6822C386.296 74.6822 345.87 106.106 320.96 129.368C316.469 129.368 313.61 128.551 309.527 126.103C307.077 116.308 304.218 107.738 300.951 101.617H298.093L283.801 137.121C287.476 144.467 290.334 152.221 291.968 157.935C268.284 172.626 223.774 184.869 167.422 184.869C134.754 184.869 109.437 184.053 82.486 178.748C51.0433 172.626 27.3592 165.688 8.98362 146.508L0 152.221C7.35024 180.788 22.4591 213.028 54.3101 230.168C79.2192 243.227 115.97 246.084 161.297 246.084Z"
+                            fill="#00004D"
+                        />
+                    </svg>
+                    <p>Indigo on Gradient</p>
+                </div>
+            </div>
+
+            <section class="palette-section">
+                <h2 class="section-title">Color Palette</h2>
+                <div class="palette-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #e3e8dc"></div>
+                        <h4>Sage</h4>
+                        <p>#E3E8DC</p>
+                        <p class="hsl">HSL 84° 16% 88%</p>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #5cd9f6"></div>
+                        <h4>Cyan</h4>
+                        <p>#5CD9F6</p>
+                        <p class="hsl">HSL 192° 88% 69%</p>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #c0f05b"></div>
+                        <h4>Lime</h4>
+                        <p>#C0F05B</p>
+                        <p class="hsl">HSL 80° 87% 69%</p>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #00004d"></div>
+                        <h4>Indigo</h4>
+                        <p>#00004D</p>
+                        <p class="hsl">HSL 240° 100% 15%</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="typography-section">
+            <div class="typography-content">
+                <h2>Typography System</h2>
+                <div class="type-grid">
+                    <div class="type-sample">
+                        <h3>Headlines</h3>
+                        <div class="type-headline">TAMHEES</div>
+                        <p class="type-note">Zalando Sans Expanded Light</p>
+                    </div>
+                    <div class="type-sample">
+                        <h3>Body Text</h3>
+                        <div class="type-body">
+                            Islamic Finance Verification<br />Certified authority in every decision
+                        </div>
+                        <p class="type-note">Geist Regular</p>
+                    </div>
+                </div>
+                <div class="font-specs">
+                    <h4>Font Specifications</h4>
+                    <p><strong>Headlines:</strong> Zalando Sans Expanded Light — Letter-spacing: 0.8em, All caps</p>
+                    <p><strong>Body:</strong> Geist Regular — Line-height: 1.7, Standard case</p>
+                    <p class="note">
+                        <strong>Note:</strong> Zalando Sans is a proprietary font. For open-source alternatives,
+                        consider Urbanist Light Expanded or Lexend Deca.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="application-section">
+                <h2 class="section-title">Application Preview</h2>
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>Business Card</h4>
+                        <div class="business-card-preview">
+                            <div class="bc-logo">
+                                <svg
+                                    width="200"
+                                    height="90"
+                                    viewBox="0 0 773 349"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M161.297 246.084C211.932 246.084 269.917 234.249 303.401 207.723C306.26 203.234 308.71 195.48 310.752 186.502C316.06 188.95 320.96 189.766 361.387 189.766C454.081 189.766 465.515 187.726 471.232 183.645L482.666 165.28H484.707C490.424 179.564 506.35 189.766 522.275 189.766C543.509 189.766 565.968 184.869 590.469 171.402C599.861 166.097 607.211 165.28 623.545 165.28C628.037 165.28 634.57 166.505 641.104 167.729C640.696 169.769 640.696 171.81 640.696 173.034C640.696 187.318 655.805 190.174 675.405 190.174C687.656 190.174 693.781 189.766 701.948 185.685L707.256 175.483C729.307 183.645 749.316 195.888 752.174 207.315H759.116C766.875 182.421 773 167.321 773 150.589C773 130.184 743.599 121.614 721.548 113.86C718.69 112.636 716.24 108.555 716.24 104.474C716.24 101.617 724.815 92.6386 746.866 92.6386C757.074 92.6386 759.525 96.7196 759.525 101.209H766.058C770.142 90.19 773 77.1308 773 71.8255C773 57.134 771.367 51.0125 757.483 51.0125C737.882 51.0125 695.006 72.2336 695.006 105.29C695.006 115.084 697.048 121.206 699.089 126.919C691.331 130.184 672.138 131.816 668.463 126.511L670.913 112.636L668.872 107.33C648.863 107.738 620.687 96.3115 599.861 85.7009C583.119 77.1308 566.785 69.785 556.985 69.785C539.426 69.785 529.625 96.7196 522.275 129.776H521.867C507.575 129.776 496.958 122.838 496.141 115.084L490.833 66.5202H487.566L465.515 93.8629L471.64 124.47C469.599 128.551 461.432 129.776 451.223 129.776H437.339C439.381 123.246 441.014 116.308 441.014 111.411C441.014 97.9439 412.838 74.6822 400.18 74.6822C386.296 74.6822 345.87 106.106 320.96 129.368C316.469 129.368 313.61 128.551 309.527 126.103C307.077 116.308 304.218 107.738 300.951 101.617H298.093L283.801 137.121C287.476 144.467 290.334 152.221 291.968 157.935C268.284 172.626 223.774 184.869 167.422 184.869C134.754 184.869 109.437 184.053 82.486 178.748C51.0433 172.626 27.3592 165.688 8.98362 146.508L0 152.221C7.35024 180.788 22.4591 213.028 54.3101 230.168C79.2192 243.227 115.97 246.084 161.297 246.084Z"
+                                        fill="#5CD9F6"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="bc-info">
+                                <div class="title">Islamic Finance Verification</div>
+                                Dubai · London · Casablanca
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <h4>Certification Seal</h4>
+                        <div class="seal-preview">
+                            <svg viewBox="0 0 150 150">
+                                <circle cx="75" cy="75" r="65" fill="none" stroke="#5CD9F6" stroke-width="2" />
+                                <circle cx="75" cy="75" r="55" fill="none" stroke="#C0F05B" stroke-width="1" />
+                                <circle cx="75" cy="75" r="40" fill="url(#sealGrad)" />
+                                <defs>
+                                    <linearGradient id="sealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color: #5cd9f6" />
+                                        <stop offset="100%" style="stop-color: #c0f05b" />
+                                    </linearGradient>
+                                </defs>
+                                <text
+                                    x="75"
+                                    y="85"
+                                    font-family="serif"
+                                    font-size="28"
+                                    fill="#00004D"
+                                    text-anchor="middle"
+                                >
+                                    ت
+                                </text>
+                            </svg>
+                            <p>Verified by Tamhees</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="keywords-section">
+            <h2>Design Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword">Bold</span>
+                <span class="keyword">Digital</span>
+                <span class="keyword">Vibrant</span>
+                <span class="keyword">Modern</span>
+                <span class="keyword">Dynamic</span>
+                <span class="keyword">Innovative</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>Tamhees Logo Design Brief — Art Direction 3: The Calibrated Mark</p>
+            <p style="margin-top: 12px"><span>Verification • Precision • Trust • Depth • Balance • Authority</span></p>
+        </footer>
+    </body>
+</html>

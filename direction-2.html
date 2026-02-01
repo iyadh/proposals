@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tamhees - Art Direction 2: Layered Transparency (Final)</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inter:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            :root {
+                --color-primary: #4d1831;
+                --color-secondary: #724542;
+                --color-bg: #f4ecd8;
+                --color-dark: #1a1829;
+            }
+
+            body {
+                font-family: "Inter", sans-serif;
+                background: var(--color-bg);
+                color: var(--color-dark);
+                line-height: 1.7;
+            }
+
+            .header {
+                background: linear-gradient(160deg, var(--color-primary) 0%, #3d1227 100%);
+                color: var(--color-bg);
+                padding: 80px 40px;
+                text-align: center;
+            }
+
+            .logo-container {
+                margin-bottom: 30px;
+            }
+
+            .logo-container svg {
+                max-width: 380px;
+                height: auto;
+            }
+
+            .header h1 {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 3rem;
+                font-weight: 400;
+                letter-spacing: 12px;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .header .subtitle {
+                font-family: "Inter", sans-serif;
+                font-size: 0.95rem;
+                letter-spacing: 5px;
+                text-transform: uppercase;
+                opacity: 0.85;
+                font-weight: 300;
+            }
+
+            .direction-badge {
+                display: inline-block;
+                background: var(--color-secondary);
+                color: var(--color-bg);
+                padding: 12px 30px;
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 0.85rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-top: 35px;
+            }
+
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+                padding: 70px 40px;
+            }
+
+            .section-title {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 400;
+                margin-bottom: 45px;
+                color: var(--color-primary);
+                border-bottom: 2px solid var(--color-secondary);
+                padding-bottom: 15px;
+                letter-spacing: 4px;
+            }
+
+            /* Logo Showcase */
+            .logo-showcase {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+                margin-bottom: 80px;
+            }
+
+            .logo-variant {
+                padding: 50px 30px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 220px;
+            }
+
+            .logo-variant svg {
+                max-width: 320px;
+                height: auto;
+            }
+
+            .logo-variant.dark {
+                background: var(--color-primary);
+            }
+            .logo-variant.light {
+                background: var(--color-bg);
+                border: 1px solid #ddd5c1;
+            }
+            .logo-variant.secondary {
+                background: var(--color-secondary);
+            }
+
+            .logo-variant p {
+                margin-top: 20px;
+                font-family: "Inter", sans-serif;
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                opacity: 0.8;
+            }
+
+            .logo-variant.dark p,
+            .logo-variant.secondary p {
+                color: var(--color-bg);
+            }
+            .logo-variant.light p {
+                color: var(--color-dark);
+            }
+
+            /* Color Palette */
+            .palette-section {
+                margin-bottom: 90px;
+            }
+
+            .palette-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 25px;
+            }
+
+            .color-card {
+                text-align: center;
+            }
+
+            .color-swatch {
+                height: 90px;
+                border-radius: 8px;
+                margin-bottom: 18px;
+                box-shadow: 0 6px 25px rgba(26, 24, 41, 0.08);
+            }
+
+            .color-card h4 {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 6px;
+            }
+
+            .color-card p {
+                font-family: "Inter", sans-serif;
+                font-size: 0.8rem;
+                color: #6b6264;
+            }
+
+            .color-card .hsl {
+                font-size: 0.75rem;
+                color: #9a9598;
+                margin-top: 4px;
+            }
+
+            /* Typography */
+            .typography-section {
+                background: var(--color-primary);
+                color: var(--color-bg);
+                padding: 90px 60px;
+                margin: 0 -40px 90px;
+            }
+
+            .typography-section h2 {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 1.8rem;
+                font-weight: 400;
+                margin-bottom: 55px;
+                text-align: center;
+                letter-spacing: 5px;
+                color: var(--color-bg);
+                text-transform: uppercase;
+            }
+
+            .type-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
+                max-width: 1100px;
+                margin: 0 auto;
+            }
+
+            .type-sample {
+                padding: 45px;
+                background: rgba(244, 236, 216, 0.05);
+                border: 1px solid rgba(244, 236, 216, 0.15);
+            }
+
+            .type-sample h3 {
+                font-family: "Inter", sans-serif;
+                font-size: 0.75rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--color-secondary);
+                margin-bottom: 25px;
+                font-weight: 500;
+            }
+
+            .type-headline {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 2.8rem;
+                text-align: center;
+                letter-spacing: 10px;
+                margin-bottom: 15px;
+            }
+
+            .type-body {
+                font-family: "Inter", sans-serif;
+                font-size: 1.05rem;
+                text-align: center;
+                font-weight: 400;
+                line-height: 1.8;
+            }
+
+            .type-note {
+                font-size: 0.8rem;
+                color: rgba(244, 236, 216, 0.6);
+                text-align: center;
+                margin-top: 18px;
+            }
+
+            .font-specs {
+                background: rgba(114, 69, 66, 0.2);
+                padding: 25px;
+                border-left: 3px solid var(--color-secondary);
+                max-width: 1100px;
+                margin: 40px auto 0;
+            }
+
+            .font-specs h4 {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                color: var(--color-bg);
+                margin-bottom: 15px;
+            }
+
+            .font-specs p {
+                font-family: "Inter", sans-serif;
+                font-size: 0.9rem;
+                margin-bottom: 8px;
+                color: rgba(244, 236, 216, 0.8);
+            }
+
+            /* Application */
+            .application-section {
+                margin-bottom: 90px;
+            }
+
+            .application-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .app-card {
+                background: white;
+                padding: 35px;
+                box-shadow: 0 4px 30px rgba(26, 24, 41, 0.06);
+            }
+
+            .app-card h4 {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                margin-bottom: 22px;
+                color: var(--color-secondary);
+            }
+
+            .business-card-preview {
+                background: var(--color-primary);
+                padding: 35px;
+                color: var(--color-bg);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .bc-logo svg {
+                width: 180px;
+                height: auto;
+            }
+
+            .bc-info {
+                text-align: right;
+                font-family: "Inter", sans-serif;
+                font-size: 0.7rem;
+                line-height: 1.9;
+                color: rgba(244, 236, 216, 0.85);
+            }
+
+            .bc-info .title {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 0.8rem;
+                letter-spacing: 2px;
+                color: var(--color-bg);
+                margin-bottom: 5px;
+            }
+
+            .report-preview {
+                border: 1px solid #ddd5c1;
+                padding: 30px;
+                min-height: 200px;
+            }
+
+            .rp-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 20px;
+                border-bottom: 2px solid var(--color-secondary);
+                margin-bottom: 20px;
+            }
+
+            .rp-logo svg {
+                width: 140px;
+                height: auto;
+            }
+
+            .rp-title {
+                font-family: "Inter", sans-serif;
+                font-size: 0.65rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: #6b6264;
+                text-align: right;
+            }
+
+            .rp-title .company {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 0.8rem;
+                color: var(--color-primary);
+                letter-spacing: 3px;
+                margin-bottom: 5px;
+            }
+
+            .rp-content {
+                display: flex;
+                gap: 15px;
+            }
+
+            .rp-sidebar {
+                width: 6px;
+                background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+                border-radius: 4px;
+            }
+
+            .rp-lines {
+                flex: 1;
+                background: repeating-linear-gradient(transparent, transparent 18px, #e5ddc9 18px, #e5ddc9 19px);
+                height: 80px;
+            }
+
+            /* Keywords */
+            .keywords-section {
+                background: var(--color-secondary);
+                padding: 55px;
+                text-align: center;
+                margin: 0 -40px 90px;
+            }
+
+            .keywords-section h2 {
+                font-family: "Tenor Sans", sans-serif;
+                font-size: 1.1rem;
+                letter-spacing: 4px;
+                text-transform: uppercase;
+                color: rgba(244, 236, 216, 0.7);
+                margin-bottom: 30px;
+            }
+
+            .keywords-list {
+                display: flex;
+                justify-content: center;
+                gap: 45px;
+                flex-wrap: wrap;
+            }
+
+            .keyword {
+                font-family: "Inter", sans-serif;
+                font-size: 0.95rem;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                color: var(--color-bg);
+                padding: 8px 0;
+                border-bottom: 1px solid rgba(244, 236, 216, 0.3);
+            }
+
+            footer {
+                text-align: center;
+                padding: 45px;
+                color: #6b6264;
+                font-family: "Inter", sans-serif;
+                font-size: 0.85rem;
+            }
+
+            footer span {
+                color: var(--color-secondary);
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="logo-container">
+                <svg width="541" height="262" viewBox="0 0 541 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M188.125 200.691C210.963 200.691 225.914 190.336 235.115 183.926C239.88 180.639 242.837 178.502 244.809 179.324L244.973 157.792C242.673 156.97 239.88 159.6 236.265 162.887C228.05 170.284 214.577 182.447 189.275 182.447C169.394 182.447 161.837 165.846 161.837 151.71C161.837 118.673 203.076 87.4429 218.356 87.4429C231.993 87.4429 241.851 96.3187 244.151 116.043L248.423 99.7704L246.945 99.2773C240.701 111.934 226.243 120.974 211.62 120.974C207.677 120.974 204.062 119.494 201.597 117.851L200.447 119.001L206.526 129.192C207.512 121.631 205.705 114.563 201.269 107.331H198.969L193.875 124.261C198.804 133.137 201.926 142.834 203.405 154.504L207.184 138.396C195.518 162.065 134.398 180.639 91.5157 180.639C60.2985 180.639 34.3389 175.708 1.80731 164.531L0 168.311C34.3389 187.542 58.6555 200.527 92.1729 200.527C131.769 200.527 175.309 184.255 204.719 162.558L207.348 150.56C208.662 144.478 208.991 136.917 208.498 130.343L201.926 139.547C235.936 144.971 250.395 120.481 250.395 95.0038C250.395 82.3476 237.251 68.8695 223.778 68.8695C197.983 68.8695 154.279 116.207 154.279 158.12C154.279 181.132 164.958 200.691 188.125 200.691ZM223.942 262L234.951 245.399L218.028 231.757L206.855 248.358L223.942 262ZM248.752 260.356L259.76 243.755L242.837 229.949L231.665 246.55L248.752 260.356ZM264.525 200.691C277.012 200.691 289.499 194.281 301.821 184.748C320.716 169.955 343.554 155.162 377.564 155.326L382 139.876L379.207 136.753C338.132 138.396 299.192 137.903 267.154 131.493L260.089 142.506C282.269 135.109 300.178 118.179 309.05 102.565C315.129 91.8808 321.866 85.9636 326.959 85.9636C334.188 85.9636 336.817 97.798 335.831 110.454L342.075 93.5245C338.789 99.2773 336.817 101.085 331.395 101.085C318.744 101.085 300.014 79.0602 300.014 62.6236C300.014 53.4191 310.693 39.4479 315.129 39.4479C320.223 39.4479 325.152 52.926 327.616 59.5006H330.245L334.188 45.6939C334.188 36.1606 325.152 19.5596 319.566 19.5596C310.036 19.5596 291.306 49.9674 291.306 68.8695C291.306 89.9084 307.9 120.152 330.081 120.152C337.803 120.152 344.704 103.386 344.704 95.99C344.704 85.6349 340.76 68.8695 332.217 68.8695C322.523 68.8695 316.115 78.2384 308.886 88.7578C306.75 91.8808 304.286 95.3325 301.657 98.7842C294.099 108.646 284.898 113.906 276.354 118.673C264.032 125.576 252.531 132.151 249.245 152.203L252.202 154.34C268.797 152.203 285.062 153.518 301.492 154.833C310.2 155.655 318.908 156.312 327.452 156.477L328.109 148.916C320.551 153.025 313.322 158.449 306.422 164.038C293.935 173.735 280.298 181.296 264.525 181.296C253.352 181.296 245.959 175.215 247.93 157.627H243.494C234.951 182.94 243.659 200.691 264.525 200.691ZM227.228 32.0514L238.237 15.4504L221.314 1.80803L210.141 18.409L227.228 32.0514ZM252.038 30.4078L263.046 13.8068L246.123 0L234.951 16.601L252.038 30.4078ZM93.1587 97.3049L109.096 95.0038C117.147 88.4291 122.24 79.0602 122.24 71.0063C122.24 65.4178 117.147 61.8018 109.589 61.8018H91.68L83.6292 79.8821H116.818L120.761 74.458L91.8443 93.6888L93.1587 97.3049Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M521.672 246.627H524.12C524.144 247.035 524.24 247.539 524.408 248.139C524.576 248.715 524.9 249.279 525.38 249.831C525.86 250.383 526.556 250.863 527.468 251.271C528.38 251.655 529.592 251.847 531.104 251.847C533 251.847 534.512 251.487 535.64 250.767C536.792 250.047 537.368 248.907 537.368 247.347C537.368 246.099 537.008 245.103 536.288 244.359C535.568 243.615 534.656 242.991 533.552 242.487C532.472 241.959 531.296 241.491 530.024 241.083C528.752 240.675 527.564 240.183 526.46 239.607C525.38 239.031 524.48 238.311 523.76 237.447C523.04 236.583 522.68 235.443 522.68 234.027C522.68 232.947 522.896 231.987 523.328 231.147C523.784 230.307 524.384 229.611 525.128 229.059C525.896 228.507 526.772 228.087 527.756 227.799C528.764 227.511 529.82 227.367 530.924 227.367C531.98 227.367 532.988 227.499 533.948 227.763C534.932 228.003 535.808 228.375 536.576 228.879C537.344 229.359 537.98 229.959 538.484 230.679C538.988 231.375 539.312 232.167 539.456 233.055H537.008C536.816 231.639 536.168 230.607 535.064 229.959C533.984 229.287 532.664 228.951 531.104 228.951C530.168 228.951 529.34 229.071 528.62 229.311C527.9 229.527 527.288 229.827 526.784 230.211C526.304 230.571 525.932 231.003 525.668 231.507C525.428 232.011 525.308 232.551 525.308 233.127C525.308 234.159 525.68 234.987 526.424 235.611C527.168 236.235 528.092 236.787 529.196 237.267C530.324 237.747 531.536 238.203 532.832 238.635C534.152 239.067 535.364 239.607 536.468 240.255C537.596 240.879 538.532 241.671 539.276 242.631C540.02 243.567 540.392 244.779 540.392 246.267C540.392 247.347 540.176 248.331 539.744 249.219C539.312 250.107 538.7 250.863 537.908 251.487C537.116 252.111 536.156 252.591 535.028 252.927C533.924 253.263 532.676 253.431 531.284 253.431C529.916 253.431 528.656 253.275 527.504 252.963C526.352 252.627 525.344 252.171 524.48 251.595C523.64 250.995 522.968 250.275 522.464 249.435C521.984 248.595 521.72 247.659 521.672 246.627Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M490.406 227.801H506.678V229.781H493.682V238.817H504.842V240.473H493.682V251.021H506.678V253.001H490.406V227.801Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M456.148 227.801H472.42V229.781H459.424V238.817H470.584V240.473H459.424V251.021H472.42V253.001H456.148V227.801Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M416.557 240.473V253.001H413.281V227.801H416.557V238.817H431.641V227.801H434.917V253.001H431.641V240.473H416.557Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M366.182 227.801L377.738 249.437H377.882L389.546 227.801H392.03V253.001H388.754V232.589H388.61L377.234 253.433H376.586L365.462 232.445H365.318V253.001H363.734V227.801H366.182Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M338.767 245.585H326.347L323.179 253.001H321.523L332.179 227.801H333.979L345.715 253.001H342.223L338.767 245.585ZM338.011 243.965L332.359 231.833H332.215L327.031 243.965H338.011Z"
+                        fill="#F4ECD8"
+                    />
+                    <path
+                        d="M301.799 253.001H298.523V229.781H288.875V227.801H311.447V229.781H301.799V253.001Z"
+                        fill="#F4ECD8"
+                    />
+                </svg>
+            </div>
+            <h1>TAMHEES</h1>
+            <p class="subtitle">Logo Design Moodboard</p>
+            <div class="direction-badge">Art Direction 2 — Layered Transparency</div>
+        </header>
+
+        <div class="container">
+            <h2 class="section-title">Logo Color Variants</h2>
+            <div class="logo-showcase">
+                <div class="logo-variant dark">
+                    <svg width="541" height="262" viewBox="0 0 541 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M188.125 200.691C210.963 200.691 225.914 190.336 235.115 183.926C239.88 180.639 242.837 178.502 244.809 179.324L244.973 157.792C242.673 156.97 239.88 159.6 236.265 162.887C228.05 170.284 214.577 182.447 189.275 182.447C169.394 182.447 161.837 165.846 161.837 151.71C161.837 118.673 203.076 87.4429 218.356 87.4429C231.993 87.4429 241.851 96.3187 244.151 116.043L248.423 99.7704L246.945 99.2773C240.701 111.934 226.243 120.974 211.62 120.974C207.677 120.974 204.062 119.494 201.597 117.851L200.447 119.001L206.526 129.192C207.512 121.631 205.705 114.563 201.269 107.331H198.969L193.875 124.261C198.804 133.137 201.926 142.834 203.405 154.504L207.184 138.396C195.518 162.065 134.398 180.639 91.5157 180.639C60.2985 180.639 34.3389 175.708 1.80731 164.531L0 168.311C34.3389 187.542 58.6555 200.527 92.1729 200.527C131.769 200.527 175.309 184.255 204.719 162.558L207.348 150.56C208.662 144.478 208.991 136.917 208.498 130.343L201.926 139.547C235.936 144.971 250.395 120.481 250.395 95.0038C250.395 82.3476 237.251 68.8695 223.778 68.8695C197.983 68.8695 154.279 116.207 154.279 158.12C154.279 181.132 164.958 200.691 188.125 200.691Z"
+                            fill="#F4ECD8"
+                        />
+                    </svg>
+                    <p>Cream on Burgundy</p>
+                </div>
+                <div class="logo-variant light">
+                    <svg width="541" height="262" viewBox="0 0 541 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M188.125 200.691C210.963 200.691 225.914 190.336 235.115 183.926C239.88 180.639 242.837 178.502 244.809 179.324L244.973 157.792C242.673 156.97 239.88 159.6 236.265 162.887C228.05 170.284 214.577 182.447 189.275 182.447C169.394 182.447 161.837 165.846 161.837 151.71C161.837 118.673 203.076 87.4429 218.356 87.4429C231.993 87.4429 241.851 96.3187 244.151 116.043L248.423 99.7704L246.945 99.2773C240.701 111.934 226.243 120.974 211.62 120.974C207.677 120.974 204.062 119.494 201.597 117.851L200.447 119.001L206.526 129.192C207.512 121.631 205.705 114.563 201.269 107.331H198.969L193.875 124.261C198.804 133.137 201.926 142.834 203.405 154.504L207.184 138.396C195.518 162.065 134.398 180.639 91.5157 180.639C60.2985 180.639 34.3389 175.708 1.80731 164.531L0 168.311C34.3389 187.542 58.6555 200.527 92.1729 200.527C131.769 200.527 175.309 184.255 204.719 162.558L207.348 150.56C208.662 144.478 208.991 136.917 208.498 130.343L201.926 139.547C235.936 144.971 250.395 120.481 250.395 95.0038C250.395 82.3476 237.251 68.8695 223.778 68.8695C197.983 68.8695 154.279 116.207 154.279 158.12C154.279 181.132 164.958 200.691 188.125 200.691Z"
+                            fill="#4D1831"
+                        />
+                    </svg>
+                    <p>Burgundy on Cream</p>
+                </div>
+                <div class="logo-variant secondary">
+                    <svg width="541" height="262" viewBox="0 0 541 262" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M188.125 200.691C210.963 200.691 225.914 190.336 235.115 183.926C239.88 180.639 242.837 178.502 244.809 179.324L244.973 157.792C242.673 156.97 239.88 159.6 236.265 162.887C228.05 170.284 214.577 182.447 189.275 182.447C169.394 182.447 161.837 165.846 161.837 151.71C161.837 118.673 203.076 87.4429 218.356 87.4429C231.993 87.4429 241.851 96.3187 244.151 116.043L248.423 99.7704L246.945 99.2773C240.701 111.934 226.243 120.974 211.62 120.974C207.677 120.974 204.062 119.494 201.597 117.851L200.447 119.001L206.526 129.192C207.512 121.631 205.705 114.563 201.269 107.331H198.969L193.875 124.261C198.804 133.137 201.926 142.834 203.405 154.504L207.184 138.396C195.518 162.065 134.398 180.639 91.5157 180.639C60.2985 180.639 34.3389 175.708 1.80731 164.531L0 168.311C34.3389 187.542 58.6555 200.527 92.1729 200.527C131.769 200.527 175.309 184.255 204.719 162.558L207.348 150.56C208.662 144.478 208.991 136.917 208.498 130.343L201.926 139.547C235.936 144.971 250.395 120.481 250.395 95.0038C250.395 82.3476 237.251 68.8695 223.778 68.8695C197.983 68.8695 154.279 116.207 154.279 158.12C154.279 181.132 164.958 200.691 188.125 200.691Z"
+                            fill="#F4ECD8"
+                        />
+                    </svg>
+                    <p>Cream on Terracotta</p>
+                </div>
+            </div>
+
+            <section class="palette-section">
+                <h2 class="section-title">Color Palette</h2>
+                <div class="palette-grid">
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #4d1831"></div>
+                        <h4>Burgundy</h4>
+                        <p>#4D1831</p>
+                        <p class="hsl">HSL 338° 52% 20%</p>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #724542"></div>
+                        <h4>Terracotta</h4>
+                        <p>#724542</p>
+                        <p class="hsl">HSL 6° 28% 35%</p>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #f4ecd8"></div>
+                        <h4>Cream</h4>
+                        <p>#F4ECD8</p>
+                        <p class="hsl">HSL 40° 52% 89%</p>
+                    </div>
+                    <div class="color-card">
+                        <div class="color-swatch" style="background: #1a1829"></div>
+                        <h4>Deep Violet</h4>
+                        <p>#1A1829</p>
+                        <p class="hsl">HSL 243° 31% 14%</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="typography-section">
+            <h2>Typography System</h2>
+            <div class="type-grid">
+                <div class="type-sample">
+                    <h3>Headlines</h3>
+                    <div class="type-headline">TAMHEES</div>
+                    <p class="type-note">Tenor Sans</p>
+                </div>
+                <div class="type-sample">
+                    <h3>Body Text</h3>
+                    <div class="type-body">Islamic Finance Advisory<br />Clarity through careful examination</div>
+                    <p class="type-note">Inter Regular</p>
+                </div>
+            </div>
+            <div class="font-specs">
+                <h4>Font Specifications</h4>
+                <p><strong>Headlines:</strong> Tenor Sans — Letter-spacing: 0.4em, All caps</p>
+                <p><strong>Body:</strong> Inter Regular — Line-height: 1.7, Standard case</p>
+                <p><strong>Source:</strong> Google Fonts (Open Source)</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section class="application-section">
+                <h2 class="section-title">Application Preview</h2>
+                <div class="application-grid">
+                    <div class="app-card">
+                        <h4>Business Card</h4>
+                        <div class="business-card-preview">
+                            <div class="bc-logo">
+                                <svg
+                                    width="320"
+                                    height="160"
+                                    viewBox="0 0 541 262"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M188.125 200.691C210.963 200.691 225.914 190.336 235.115 183.926C239.88 180.639 242.837 178.502 244.809 179.324L244.973 157.792C242.673 156.97 239.88 159.6 236.265 162.887C228.05 170.284 214.577 182.447 189.275 182.447C169.394 182.447 161.837 165.846 161.837 151.71C161.837 118.673 203.076 87.4429 218.356 87.4429C231.993 87.4429 241.851 96.3187 244.151 116.043L248.423 99.7704L246.945 99.2773C240.701 111.934 226.243 120.974 211.62 120.974C207.677 120.974 204.062 119.494 201.597 117.851L200.447 119.001L206.526 129.192C207.512 121.631 205.705 114.563 201.269 107.331H198.969L193.875 124.261C198.804 133.137 201.926 142.834 203.405 154.504L207.184 138.396C195.518 162.065 134.398 180.639 91.5157 180.639C60.2985 180.639 34.3389 175.708 1.80731 164.531L0 168.311C34.3389 187.542 58.6555 200.527 92.1729 200.527C131.769 200.527 175.309 184.255 204.719 162.558L207.348 150.56C208.662 144.478 208.991 136.917 208.498 130.343L201.926 139.547C235.936 144.971 250.395 120.481 250.395 95.0038C250.395 82.3476 237.251 68.8695 223.778 68.8695C197.983 68.8695 154.279 116.207 154.279 158.12C154.279 181.132 164.958 200.691 188.125 200.691Z"
+                                        fill="#F4ECD8"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="bc-info">
+                                <div class="title">Sharia Advisory</div>
+                                Dubai · London · Casablanca
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-card">
+                        <h4>Report Cover</h4>
+                        <div class="report-preview">
+                            <div class="rp-header">
+                                <div class="rp-logo">
+                                    <svg
+                                        width="140"
+                                        height="70"
+                                        viewBox="0 0 541 262"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M188.125 200.691C210.963 200.691 225.914 190.336 235.115 183.926C239.88 180.639 242.837 178.502 244.809 179.324L244.973 157.792C242.673 156.97 239.88 159.6 236.265 162.887C228.05 170.284 214.577 182.447 189.275 182.447C169.394 182.447 161.837 165.846 161.837 151.71C161.837 118.673 203.076 87.4429 218.356 87.4429C231.993 87.4429 241.851 96.3187 244.151 116.043L248.423 99.7704L246.945 99.2773C240.701 111.934 226.243 120.974 211.62 120.974C207.677 120.974 204.062 119.494 201.597 117.851L200.447 119.001L206.526 129.192C207.512 121.631 205.705 114.563 201.269 107.331H198.969L193.875 124.261C198.804 133.137 201.926 142.834 203.405 154.504L207.184 138.396C195.518 162.065 134.398 180.639 91.5157 180.639C60.2985 180.639 34.3389 175.708 1.80731 164.531L0 168.311C34.3389 187.542 58.6555 200.527 92.1729 200.527C131.769 200.527 175.309 184.255 204.719 162.558L207.348 150.56C208.662 144.478 208.991 136.917 208.498 130.343L201.926 139.547C235.936 144.971 250.395 120.481 250.395 95.0038C250.395 82.3476 237.251 68.8695 223.778 68.8695C197.983 68.8695 154.279 116.207 154.279 158.12C154.279 181.132 164.958 200.691 188.125 200.691Z"
+                                            fill="#4D1831"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="rp-title">
+                                    <div class="company">TAMHEES</div>
+                                    Compliance Report · Q4 2025
+                                </div>
+                            </div>
+                            <div class="rp-content">
+                                <div class="rp-sidebar"></div>
+                                <div class="rp-lines"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="keywords-section">
+            <h2>Design Keywords</h2>
+            <div class="keywords-list">
+                <span class="keyword">Warm</span>
+                <span class="keyword">Heritage</span>
+                <span class="keyword">Revealed</span>
+                <span class="keyword">Serene</span>
+                <span class="keyword">Contemporary</span>
+                <span class="keyword">Trustworthy</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>Tamhees Logo Design Brief — Art Direction 2: Layered Transparency</p>
+            <p style="margin-top: 12px"><span>Verification • Precision • Trust • Depth • Balance • Authority</span></p>
+        </footer>
+    </body>
+</html>
