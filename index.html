@@ -82,17 +82,20 @@
             /* Cards Grid */
             .directions-grid {
                 display: grid;
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 30px;
                 margin-bottom: 80px;
             }
 
-            @media (max-width: 1100px) {
+            @media (max-width: 1400px) {
+                .directions-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 700px) {
                 .directions-grid {
                     grid-template-columns: 1fr;
-                    max-width: 500px;
-                    margin-left: auto;
-                    margin-right: auto;
                 }
             }
 
@@ -126,22 +129,22 @@
                 overflow: hidden;
             }
 
-            /* Direction 1 - Cool Blue */
+            /* Direction 1 - Warm Burgundy */
             .card-1 .card-preview {
-                background: linear-gradient(135deg, #060d1d 0%, #1456e1 100%);
+                background: linear-gradient(135deg, #1a1829 0%, #4d1831 100%);
             }
 
             .card-1 .color-dots span:nth-child(1) {
-                background: #f1f3f8;
+                background: #f4ecd8;
             }
             .card-1 .color-dots span:nth-child(2) {
-                background: #6b9af0;
+                background: #724542;
             }
             .card-1 .color-dots span:nth-child(3) {
-                background: #1456e1;
+                background: #4d1831;
             }
             .card-1 .color-dots span:nth-child(4) {
-                background: #060d1d;
+                background: #1a1829;
             }
 
             /* Direction 2 - Warm Burgundy */
@@ -162,22 +165,40 @@
                 background: #1a1829;
             }
 
-            /* Direction 3 - Vibrant Neon */
+            /* Direction 3 - Warm Burgundy */
             .card-3 .card-preview {
-                background: linear-gradient(135deg, #00004d 0%, #5cd9f6 50%, #c0f05b 100%);
+                background: linear-gradient(135deg, #1a1829 0%, #4d1831 100%);
             }
 
             .card-3 .color-dots span:nth-child(1) {
-                background: #e3e8dc;
+                background: #f4ecd8;
             }
             .card-3 .color-dots span:nth-child(2) {
-                background: #5cd9f6;
+                background: #724542;
             }
             .card-3 .color-dots span:nth-child(3) {
-                background: #c0f05b;
+                background: #4d1831;
             }
             .card-3 .color-dots span:nth-child(4) {
-                background: #00004d;
+                background: #1a1829;
+            }
+
+            /* Direction 4 - Warm Burgundy */
+            .card-4 .card-preview {
+                background: linear-gradient(135deg, #1a1829 0%, #4d1831 100%);
+            }
+
+            .card-4 .color-dots span:nth-child(1) {
+                background: #f4ecd8;
+            }
+            .card-4 .color-dots span:nth-child(2) {
+                background: #724542;
+            }
+            .card-4 .color-dots span:nth-child(3) {
+                background: #4d1831;
+            }
+            .card-4 .color-dots span:nth-child(4) {
+                background: #1a1829;
             }
 
             /* Logo placeholder in preview */
@@ -378,7 +399,7 @@
                 <h1 class="header-title">Tamhees</h1>
                 <p class="header-arabic">تمحيص</p>
                 <p class="header-subtitle">
-                    Three distinct visual directions for an Islamic financial and Sharia consulting firm operating
+                    Four distinct visual directions for an Islamic financial and Sharia consulting firm operating
                     across Europe, Gulf, and Africa
                 </p>
             </header>
@@ -521,6 +542,50 @@
                         <div class="fonts-list">
                             <span>Headlines: Zalando Sans Expanded Light</span>
                             <span>Body: Geist</span>
+                        </div>
+                        <div class="view-btn">
+                            View Moodboard
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Direction 4 -->
+                <a href="direction-4.html" class="direction-card card-4">
+                    <div class="card-preview">
+                        <div class="preview-logo">
+                            <span class="arabic">تمحيص</span>
+                            <span class="latin">Tamhees</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-number">Direction 04</p>
+                        <h3 class="card-title">Geometric Precision</h3>
+                        <p class="card-description">
+                            A structured, authoritative approach with geometric Kufi-inspired letterforms conveying
+                            trust and institutional credibility.
+                        </p>
+                        <div class="color-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="fonts-list">
+                            <span>Headlines: Sofia Sans Condensed Medium</span>
+                            <span>Body: Red Hat Text</span>
                         </div>
                         <div class="view-btn">
                             View Moodboard
